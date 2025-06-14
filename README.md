@@ -24,3 +24,37 @@ A simple Task Management System built with Laravel that allows users to create, 
 
 1. **Clone the repository**
 
+git clone https://github.com/joshuva05/toDoApp.git
+cd toDoApp
+
+## Install dependencies
+composer install
+npm install && npm run dev
+
+##  Environment setup
+cp .env.example .env
+php artisan key:generate
+
+##  Set up your database
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=todoapp
+DB_USERNAME=root
+DB_PASSWORD=
+
+## Scheduled Command
+php artisan schedule:run
+php artisan tasks:update-status
+
+
+##  Usage Login Cred
+Email : adam@test.com
+Passworg : Abc@1234
+
+Email : james@test.com
+Passworg : Abc@1234
+
+Email : daniel@test.com
+Passworg : Abc@1234
+ 
