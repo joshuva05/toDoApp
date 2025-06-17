@@ -42,9 +42,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('task.create', [
-            'task' => Task::get()
-        ]);
+        return view('task.create');
     }
 
     /**
