@@ -10,26 +10,30 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{{ __('Task Status Overview') }}</h3>
-                            <canvas id="myChart"></canvas>
-                        </div>
-                    <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg shadow">
-                        <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200">{{ __('Total Tasks') }}</h3>
-                        <p class="text-2xl font-bold">{{ $taskCount }}</p>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{{ __('Task Status Overview') }}</h3>
+                        <canvas id="myChart"></canvas>
                     </div>
-                    <div class="bg-green-100 dark:bg-green-900 p-4 rounded-lg shadow">
-                        <h3 class="text-lg font-semibold text-green-800 dark:text-green-200">{{ __('Completed Tasks') }}</h3>
-                        <p class="text-2xl font-bold">{{ $taskCountByStatus['completed'] ?? 0 }}</p>
-                    </div>
-                    <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg shadow">
-                        <h3 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200">{{ __('Pending Tasks') }}</h3>
-                        <p class="text-2xl font-bold">{{ $taskCountByStatus['pending'] ?? 0 }}</p>
-                    </div>
-                    <div class="bg-red-100 dark:bg-red-900 p-4 rounded-lg shadow">
-                        <h3 class="text-lg font-semibold text-red-800 dark:text-red-200">{{ __('Overdue Tasks') }}</h3>
-                        <p class="text-2xl font-bold">{{ $taskCountByStatus['overdue'] ?? 0 }}</p>
-                    </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3 class="text-lg font-semibold text-center">{{ __('Total Tasks') }}</h3>
+                                <p class="text-2xl font-bold text-center">{{ $taskCount }}</p>
+                            </td>
+                            <td>
+                                <h3 class="text-lg font-semibold text-center">{{ __('Completed Tasks') }}</h3>
+                                <p class="text-2xl font-bold text-center">{{ $taskCountByStatus['completed'] ?? 0 }}</p>
+                            </td>
+                            <td>
+                                <h3 class="text-lg font-semibold text-center">{{ __('Total Overdue Tasks') }}</h3>
+                                <p class="text-2xl font-bold text-center">{{ $taskCountByStatus['overdue'] ?? 0 }}</p>
+                            </td>
+                            <td>
+                                <h3 class="text-lg font-semibold text-center">{{ __('Total Pending Tasks') }}</h3>
+                                <p class="text-2xl font-bold text-center">{{ $taskCountByStatus['pending'] ?? 0 }}</p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
